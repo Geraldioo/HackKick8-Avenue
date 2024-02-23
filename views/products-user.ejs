@@ -1,0 +1,184 @@
+<%- include('components/headerUser.ejs') %>
+<head>
+    <style>
+        body {
+            background-color: #EEE9E3;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            margin-bottom: 20px;
+            border: none;
+        }
+        .btn-warning {
+            background-color: #f0ad4e;
+            color: white;
+        }
+        .btn-warning:hover {
+            background-color: #ec971f;
+        }
+        .btn-outline-secondary, .btn-outline-danger {
+            border: 2px solid;
+            padding: 5px 10px;
+        }
+        .table thead {
+            background-color: #ff5722; 
+            color: white;
+        }
+    
+        
+        .table tbody tr:nth-child(odd) {
+            background-color: #f7f7f7; 
+        }
+    
+        .table tbody tr:nth-child(even) {
+            background-color: #e9ecef; 
+        }
+    
+        .table tbody tr:hover {
+            background-color: #ffe0b2; 
+        }
+        .card-custom {
+            background-color: #FFF;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .table-custom {
+            margin-bottom: 0;
+        }
+    
+        img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+        .alert {
+            text-align: center;
+        }
+    
+        img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            transition: transform 0.3s ease; 
+        }
+    
+        img:hover {
+            transform: scale(1.1);
+        }
+        @keyframes popIn {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    
+        h1 {
+            font-size: 3em; 
+            text-align: center;
+            margin-bottom: 30px;
+            background: -webkit-linear-gradient(45deg, #f0ad4e, #ec971f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: popIn 1s ease-in-out;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .card-custom {
+            width: 18rem; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .card-img-top {
+            width: 100%; 
+            height: auto; 
+            object-fit: cover; 
+        }
+        .card-text, .card-title, .card-body > a {
+            text-align: center; 
+        }
+        .card-body > a {
+            display: block; 
+            margin-bottom: 10px; 
+        }
+        
+    </style>
+</head>
+<body style="background-color: #EEE9E3;">
+    <div class="container">
+        <div>
+            <h1>
+                <b>
+                    Product List
+                </b>
+            </h1>
+    
+            <% if (buyMsg){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= buyMsg  %>
+                </div>
+            <% } %>
+        </div>
+        <div>
+            <div class="btn-group" role="group" aria-label="Basic outlined example" style="margin-bottom: 20px;">
+                <a href="/products/soldlist" class="btn btn-outline-danger" type="button" style="margin-bottom: 20px;">Sold Product List</a>
+                <% const role = ["Formal", "Casual", "Sport"].forEach(item => { %>
+                <a href="/products?orderBy=<%= item %>" type="button" class="btn btn-outline-warning">Filter By: <%= item %></a>
+                <% }) %>
+              </div>
+        </div>
+        <div margin-top: 20px;>
+            <table class="table table-bordered table-warning" style="border-color: #EEE9E3;">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Total Stock</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Picture</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% data.forEach(el =>{ %>
+                  <tr>
+                    <th scope="row"><%= el.name  %></th>
+                    <td><%= el.stock  %></td>
+                    <td><%= el.formatRupiah  %></td>
+                    <td><img src="<%= el.image  %>" alt="" style="width: 70px; height: 70px;"></td>
+                    <td><%= el.type  %></td>
+                    <td>
+                        <a href="/products/buy/<%= el.id  %>" type="button" class="btn btn-outline-secondary">Buy</a>
+                        <a href="" type="button" class="btn btn-outline-warning" hidden>Detail</a>
+                    </td>
+                  </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

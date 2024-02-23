@@ -1,0 +1,53 @@
+<%- include('components/headerAdmin.ejs') %>
+<head>
+  <style>
+    body {
+        background-color: #EEE9E3;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        padding: 20px;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        filter: brightness(0.5);
+    }
+    .carousel-control-prev:hover, .carousel-control-next:hover {
+        filter: brightness(0.7);
+    }
+    .carousel-indicators button {
+        background-color: #333;
+    }
+    .carousel-item {
+        transition: transform 0.5s ease-in-out;
+    }
+</style>
+</head>
+<body style="background-color: #EEE9E3;">
+    <div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InNsaWRlci1pbWFnZXMvYzBhZjFjNWZjZTAxMjRiZjE2MDZjNzY1Y2QzMDU3ZjYuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzAwMH0sIndlYnAiOnsicXVhbGl0eSI6MTAwfX19"  style="max-width: 100%; max-height: 500px;" class="imgPublic" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InNsaWRlci1pbWFnZXMvMTEzNC80YWFlMjJmZTg3MDI5NjNmOWZjYjc3YTdmZTk1ODcyNC5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozMDAwfSwid2VicCI6eyJxdWFsaXR5IjoxMDB9fX0="  style="max-width: 100%; max-height: 500px;" class="imgPublic" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InNsaWRlci1pbWFnZXMvYmMwMGJjMzQyMzA5YTFkYjQ0ZmVlMzVmNWE1NTk1NTAuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzAwMH0sIndlYnAiOnsicXVhbGl0eSI6MTAwfX19"  style="max-width: 100%; max-height: 500px;" class="imgPublic" alt="">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+  </body>

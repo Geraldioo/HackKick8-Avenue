@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Adidas Samba OG Cloud White Core Black",
+        "type": "Casual",
+        "stock": "10",
+        "price": 1900000,
+        "image": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzM3NDMvZGE3MzdhZTYzYTMwMzUxN2VhZWQyMTgyMzBlYjYwMTMucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxNDAwfX19"
+    },
+    {
+        "name": "Nike Air Jordan V",
+        "type": "Casual",
+        "stock": "8",
+        "price": 2500000,
+        "image": "https://www.innvictus.com/medias/IN-440889-011-4.png?context=bWFzdGVyfGltYWdlc3wxMDU3NTR8aW1hZ2UvcG5nfGltYWdlcy9oODYvaGRkLzEwMzI3NjIyMzUyOTI2LnBuZ3xiYzczNWQ3NWI3NTU0NjhjMGJkNDM2MTY1YjAwNDU0MzBmYzY0NGY1YWY0MDRlZTQxOTRhNTI3OWE3NGYyOTdj"
+    },
+    {
+        "name": "Sketcher Golf Sweats",
+        "type": "Sport",
+        "stock": "8",
+        "price": 2500000,
+        "image": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/d67773537d6cd7f17f6e4d72caa2c9ad/helix/01-SKECHERS-GOLF-A16OWSKGA-SKGMHD81AWHT-White.jpg?x-oss-process=image/format,webp"
+    },
+    {
+        "name": "Adidas Aeroready Essentials Chelsea Men's Linear Logo Shorts",
+        "type": "Sport",
+        "stock": "8",
+        "price": 2500000,
+        "image": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/a6782fc70ff2be9ec2ab6de12b31e4bd/helix/01-ADIDAS-AYAHOADI5-ADIGK9608-Ink.jpg?x-oss-process=image/format,webp"
+    },
+    {
+        "name": "Mochi Men Black",
+        "type": "Formal",
+        "stock": "8",
+        "price": 2500000,
+        "image": "https://admin.mochishoes.com/product/19-5042/660/19-5042M11.jpg"
+    },
+    {
+        "name": "Paragon R2007G",
+        "type": "Formal",
+        "stock": "8",
+        "price": 2500000,
+        "image": "https://paragonfootwear.com/cdn/shop/files/1_1aaec8fa-cfea-41c2-a669-218dae4778d4.jpg?v=1701681263"
+    }
+]

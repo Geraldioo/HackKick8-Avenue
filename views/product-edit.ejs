@@ -1,0 +1,55 @@
+<%- include('components/headerAdmin.ejs') %>
+<body>
+    <div class="container" style="margin-bottom: 20px;">
+        <h1>
+            <b>Edit Your Product</b>
+        </h1>
+    </div>
+    <% if(errors){ %>
+      <% errors.forEach(error => { %>
+          <div class="alert alert-danger container" role="alert">
+              <%= error %>
+          </div>
+     <% })  %>
+  <% } %>
+    <div class="container">
+        <form action="/admin/products/edit/<%= selectedProduct.id  %>" method="post">
+            <div class="mb-3">
+              <label for="exampleInputTitle" class="form-label">Brand</label>
+              <input type="text" class="form-control" id="exampleInputTitle" name="name" value="<%= selectedProduct.name %>">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputTotalStock" class="form-label">Stock</label>
+              <input type="number" class="form-control" id="exampleInputTotalStock" name="stock" value="<%= selectedProduct.stock %>">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPrice" class="form-label">Price</label>
+              <input type="number" class="form-control" id="exampleInputPrice" name="price" value="<%= selectedProduct.price %>">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputImage" class="form-label">Image</label>
+              <input type="url" class="form-control" id="exampleInputImage" name="image" value="<%= selectedProduct.image %>">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputStatus" class="form-label">Type</label>
+              <select class="form-select" aria-label="Default select example" name="type">
+                <option <%= selectedProduct.type === 'Formal' ? "selected" : "" %> value="Formal">Formal</option>
+                <label for="">Formal</label>
+                <option <%= selectedProduct.type === 'Casual' ? "selected" : "" %> value="Casual">Casual</option>
+                <label for="">Casual</label>
+                <option <%= selectedProduct.type === 'Sport' ? "selected" : "" %> value="Sport">Sport</option>
+                <label for="">Sport</label>
+              </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputStatus" class="form-label">Category</label>
+                <select class="form-select" aria-label="Default select example" name="CategoriesId">
+                    <% category.forEach(category => { %>
+                        <option <%= selectedProduct.ProductHasCategories[0].CategoriesId === category.id ? "selected" : "" %> value="<%= category.id %>"><%= category.categoryName %></option>
+                    <% }) %>
+                    </select>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>

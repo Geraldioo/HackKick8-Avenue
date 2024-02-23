@@ -1,0 +1,118 @@
+<%- include('components/headerAdmin.ejs') %>
+<head>
+  <style>
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 40px;
+    }
+    .form-label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .alert {
+        width: 80%;
+        margin: 10px auto;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+    .form-control, .form-select {
+        border-radius: 5px;
+        transition: border 0.3s ease-in-out;
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    
+    .mb-3 {
+        opacity: 0;
+        transform: translateX(-50%);
+        animation: slideInLeft 0.5s forwards ease-in-out;
+    }
+    .mb-3:nth-child(even) {
+        transform: translateX(50%);
+        animation: slideInRight 0.5s forwards ease-in-out;
+    }
+    @keyframes slideInLeft {
+        to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+        to { opacity: 1; transform: translateX(0); }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <b>Add Your Product</b>
+        </h1>
+    </div>
+    <% if(errors){ %>
+        <% errors.forEach(error => { %>
+            <div class="alert alert-danger container" role="alert">
+                <%= error %>
+            </div>
+       <% })  %>
+    <% } %>
+
+    <div class="container">
+        <form action="/admin/products/add" method="post">
+            <div class="mb-3">
+              <label for="exampleInputTitle" class="form-label">Brand Name</label>
+              <input type="text" class="form-control" id="exampleInputTitle" name="name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputTotalStock" class="form-label">Total Stock</label>
+              <input type="number" class="form-control" id="exampleInputTotalStock" name="stock">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPrice" class="form-label">Price</label>
+              <input type="number" class="form-control" id="exampleInputPrice" name="price">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputBookPicture" class="form-label">Picture</label>
+              <input type="url" class="form-control" id="exampleInputBookPicture" name="image">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputStatus" class="form-label">Type</label>
+              <select class="form-select" aria-label="Default select example" name="type">
+                  <option selected value="Formal">Formal</option>
+                  <option selected value="Casual">Casual</option>
+                  <option selected value="Sport">Sport</option>
+                  <option hidden selected spellcheck="false" value="" style="color: grey;">Choose...</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputStatus" class="form-label">Category</label>
+              <select class="form-select" aria-label="Default select example" name="CategoriesId">
+                  <option selected value="1">Sneakers</option>
+                  <option selected value="2">Apparel</option>
+                  <option selected value="3">Accessories</option>
+                  <option hidden selected spellcheck="false" value="" style="color: grey;">Choose...</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
